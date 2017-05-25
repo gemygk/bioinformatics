@@ -87,8 +87,8 @@ while (<FILE>) {      # Read lines
 	# next unless /\S/; # \S matches non-whitespace.  If not found in $_, skip to next line.
 	chomp;
 	if (/^\>/) {
-	    my ($id) = $_ =~ /^>([^\s\n]+)/; # extract fasta id
-	    die "Fatal error: Could not extract fasta id from fasta header from line '$_'" unless (defined $id);
+		my ($id) = $_ =~ /^>([^\s\n]+)/; # extract fasta id
+		die "Fatal error: Could not extract fasta id from fasta header from line '$_'" unless (defined $id);
 		die "Fatal error: Input fasta file '$input_file' contains a duplicate id: $id\n" if (exists $id_hash{$id});
 		$id_hash{$id} = 1;
 		my $new_header = "$prefix\_$count";
