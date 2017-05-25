@@ -45,7 +45,7 @@ my $prog = basename($0);
 my $usage = "
 	$prog -- Script to rename fasta header based on prefix
 
-	Usage: $prog <file.fasta[FILE]> <prefix[STRING]>
+	Usage: perl $prog <file.fasta[FILE]> <prefix[STRING]>
 
 	Required:
 	Positional arguments:
