@@ -1,8 +1,9 @@
 # Bioinformatics scripts and utilities
 
-# scripts/rename_fasta_header.pl -- Script to rename fasta header based on prefix
-
-	Usage: rename_fasta_header.pl <file.fasta[FILE]> <prefix[STRING]>
+# rename_fasta_header.pl
+	scripts/rename_fasta_header.pl -- Script to rename fasta header based on prefix
+	
+	Usage: perl rename_fasta_header.pl <file.fasta[FILE]> <prefix[STRING]>
 
 	Required:
 	Positional arguments:
@@ -17,8 +18,9 @@
 	with the new id and old id, for future reference.
 	Make sure that you have write access in the current folder.
 	
-# scripts/split_fasta_to_chunks.pl - Script to split fasta sequence file into user defined chunks
-
+# split_fasta_to_chunks.pl
+	scripts/split_fasta_to_chunks.pl - Script to split fasta sequence file into user defined chunks
+	
 	Usage: perl split_fasta_to_chunks.pl <file.fasta[FILE]> <prefix[STRING]> <no_of_fasta_seqs[INT]>
 
 	Required:
