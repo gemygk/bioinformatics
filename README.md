@@ -35,3 +35,15 @@
 	You should have installed LEAFF (http://kmer.sourceforge.net/wiki/index.php/LEAFF_User's_Guide) and
 	the executable leaff to be available in the PATH
 
+# validate_gff3.pl
+	scripts/validate_gff3.pl - Script to validate GFF3
+
+	Usage: perl validate_gff3.pl <annotation.gff3[FILE]>
+
+	Required:
+	Positional arguments:
+	<annotation.gff3[FILE]>   - path/to/annotation.gff3 || annotation.gff3
+
+	IMPORTANT:
+	Only cared about gene,mRNA,exon,CDS,five_prime_UTR,three_prime_UTR (case-sensitive) features,
+	mainly for protein coding transcripts.
