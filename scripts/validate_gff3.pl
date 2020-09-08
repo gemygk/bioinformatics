@@ -391,8 +391,11 @@ foreach my $trans (sort keys %mrna_info) {
 	if ( ($mrna_trans_exon_len == 0) && ( $mrna_trans_cds_len > 0 || $mrna_trans_cds_len_std > 0 ) ) {
 		warn "Fatal error: Transcript '$trans' do not have exon feature, but has CDS feature";
 		$cds_cdna_ratio = 0;
+	} elsif ( ($mrna_trans_exon_len == 0) && ( $mrna_trans_cds_len == 0 || $mrna_trans_cds_len_std == 0 ) ) {
+		warn "Fatal error: Transcript '$trans' do not have exon and CDS features";
+		$cds_cdna_ratio = 0;
 	} else {
-		$cds_cdna_ratio = sprintf("%.2f",( ($mrna_info{$trans}{cds_len}/$mrna_info{$trans}{exon_len}) * 100) )
+		$cds_cdna_ratio = sprintf("%.2f",( ($mrna_trans_cds_len/$mrna_trans_exon_len) * 100) )
 	}
 	die "Fatal error: Transcript '$trans' cds to cDNA ratio could not be calculated." unless (defined $cds_cdna_ratio);
 	warn "Fatal error: Transcript '$trans' CDS length is greater than exon length" if ( $mrna_trans_cds_len_std > $mrna_trans_exon_len );
